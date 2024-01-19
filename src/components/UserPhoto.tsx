@@ -1,5 +1,7 @@
+// Libs
 import { Image, IImageProps } from "native-base";
 
+// Types
 type Props = IImageProps & {
   size: number;
 };

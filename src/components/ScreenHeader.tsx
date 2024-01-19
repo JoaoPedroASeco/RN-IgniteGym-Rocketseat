@@ -1,5 +1,7 @@
+// Libs
 import { Center, Heading } from "native-base";
 
+// Types
 type Props = {
   title: string;
 };

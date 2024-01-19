@@ -1,4 +1,8 @@
-import { usePrivateRoutesNavigation } from "@context/usePrivateRoutesNavigationContext copy";
+// Core
+import { TouchableOpacity } from "react-native";
+import { Feather } from "@expo/vector-icons";
+
+// Libs
 import {
   Box,
   HStack,
@@ -9,15 +13,20 @@ import {
   Text,
   VStack,
 } from "native-base";
-import { TouchableOpacity } from "react-native";
-import { Feather } from "@expo/vector-icons";
 
+// Images
 import BodySVG from "@assets/body.svg";
 import SeriesSVG from "@assets/series.svg";
 import RepetitionsSVG from "@assets/repetitions.svg";
+
+// Components
 import { Button } from "@components/Button";
 
+// Contexts
+import { usePrivateRoutesNavigation } from "@context/usePrivateRoutesNavigationContext copy";
+
 export const Exercise = () => {
+  // Hooks
   const { handleGoBack } = usePrivateRoutesNavigation();
 
   return (

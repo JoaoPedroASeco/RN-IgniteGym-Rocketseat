@@ -1,15 +1,19 @@
+// Core
+import { useState } from "react";
+
 // Libs
 import { FlatList, HStack, Heading, Text, VStack } from "native-base";
 
 // Components
 import { HomeHeader } from "@components/HomeHeader";
 import { Group } from "@components/Group";
-import { useState } from "react";
 import { ExerciseCard } from "@components/ExerciseCard";
+
+// Contexts
 import { usePrivateRoutesNavigation } from "@context/usePrivateRoutesNavigationContext copy";
 
 export const Home = () => {
-  // Contexts
+  // Hooks
   const { handleNavigate } = usePrivateRoutesNavigation();
 
   // States
@@ -21,6 +25,7 @@ export const Home = () => {
     { title: "Puxada frontal 3", description: "3 séries x 12 repetições" },
   ]);
 
+  // Functions
   const handleOpenExerciseDetails = () => {
     handleNavigate("Exercise");
   };

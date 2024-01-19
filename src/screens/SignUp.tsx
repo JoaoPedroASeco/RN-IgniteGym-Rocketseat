@@ -13,6 +13,7 @@ import { Button } from "@components/Button";
 import { usePublicRoutesNavigation } from "@context/usePublicRoutesNavigationContext";
 
 export const SignUp = () => {
+  // Hooks
   const { handleGoBack } = usePublicRoutesNavigation();
 
   return (

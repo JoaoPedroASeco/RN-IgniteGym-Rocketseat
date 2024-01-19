@@ -1,5 +1,7 @@
+// Libs
 import { Text, Pressable, IPressableProps } from "native-base";
 
+// Types
 type Props = IPressableProps & {
   name: string;
   isActive: boolean;

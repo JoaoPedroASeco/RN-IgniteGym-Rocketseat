@@ -1,7 +1,11 @@
-import { HStack, Heading, Icon, Image, Text, VStack } from "native-base";
+// Core
 import { TouchableOpacity, TouchableOpacityProps } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 
+// Libs
+import { HStack, Heading, Icon, Image, Text, VStack } from "native-base";
+
+// Types
 type Props = TouchableOpacityProps & {
   title: string;
   description: string;

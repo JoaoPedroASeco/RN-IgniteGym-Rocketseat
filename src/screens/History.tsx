@@ -1,9 +1,15 @@
-import { HistoryCard } from "@components/HistoryCard";
-import { ScreenHeader } from "@components/ScreenHeader";
-import { Heading, VStack, SectionList, Text } from "native-base";
+// Core
 import { useState } from "react";
 
+// Components
+import { HistoryCard } from "@components/HistoryCard";
+import { ScreenHeader } from "@components/ScreenHeader";
+
+// Libs
+import { Heading, VStack, SectionList, Text } from "native-base";
+
 export const History = () => {
+  // States
   const [exercisesHistory, setExercisesHistory] = useState([
     {
       title: "27.08.22",

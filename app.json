@@ -34,6 +34,12 @@
           "node_modules/@expo-google-fonts/inter/Roboto_700Bold.ttf"
         ]
       }
+    ],
+    [
+      "expo-image-picker",
+      {
+        "photosPermission": "The app accesses your photos to let you share them with your friends."
+      }
     ]
   ]
 }

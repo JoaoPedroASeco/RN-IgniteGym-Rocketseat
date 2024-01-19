@@ -1,7 +1,14 @@
+// Core
+import { useState } from "react";
+import { TouchableOpacity } from "react-native";
+
+// Components
 import { Button } from "@components/Button";
 import { Input } from "@components/Input";
 import { ScreenHeader } from "@components/ScreenHeader";
 import { UserPhoto } from "@components/UserPhoto";
+
+// Libs
 import {
   Center,
   Heading,
@@ -10,12 +17,12 @@ import {
   Text,
   VStack,
 } from "native-base";
-import { useState } from "react";
-import { TouchableOpacity } from "react-native";
 
+// Consts
 const PHOTO_SIZE = 33;
 
 export const Profile = () => {
+  // States
   const [loading, setLoading] = useState(false);
 
   return (
