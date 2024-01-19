@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -26,5 +24,16 @@
     "web": {
       "favicon": "./assets/favicon.png"
     }
-  }
+  },
+  "plugins": [
+    [
+      "expo-font",
+      {
+        "fonts": [
+          "node_modules/@expo-google-fonts/inter/Roboto_400Regular.ttf",
+          "node_modules/@expo-google-fonts/inter/Roboto_700Bold.ttf"
+        ]
+      }
+    ]
+  ]
 }
