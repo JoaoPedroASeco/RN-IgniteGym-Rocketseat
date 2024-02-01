@@ -1,6 +1,6 @@
 // Core
 import { useState } from "react";
-import { TouchableOpacity } from "react-native";
+import { Alert, TouchableOpacity } from "react-native";
 
 // Components
 import { Button } from "@components/Button";
@@ -16,14 +16,61 @@ import {
   Skeleton,
   Text,
   VStack,
+  useToast,
 } from "native-base";
+import * as ImagePicker from "expo-image-picker";
+import * as FileSystem from "expo-file-system";
 
 // Consts
 const PHOTO_SIZE = 33;
 
 export const Profile = () => {
+  // Hooks
+  const toast = useToast();
+
   // States
   const [loading, setLoading] = useState(false);
+  const [image, setImage] = useState("https://github.com/JoaoPedroASeco.png");
+
+  // Functions
+  const handleUserPhotoSelect = async () => {
+    setLoading(true);
+
+    try {
+      const { assets, canceled } = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
+        quality: 1,
+        aspect: [4, 4],
+        allowsEditing: true,
+      });
+
+      if (canceled) {
+        return;
+      }
+
+      if (assets && assets[0].uri) {
+        const imageURI = assets[0].uri;
+
+        const { size }: any = await FileSystem.getInfoAsync(imageURI);
+
+        const sizeInMB = size / 1024 / 1024;
+
+        if (size && sizeInMB > 5) {
+          return toast.show({
+            title: "Essa imagem e muito grande. Escolha uma de ate 5MB",
+            placement: "top",
+            bgColor: "red.500",
+          });
+        }
+
+        setImage(imageURI);
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <VStack flex={1}>
@@ -42,13 +89,13 @@ export const Profile = () => {
           ) : (
             <UserPhoto
               size={PHOTO_SIZE}
-              source={{ uri: "https://github.com/JoaoPedroASeco.png" }}
+              source={{ uri: image }}
               alt="Foto do usuario"
               mb={3}
             />
           )}
 
-          <TouchableOpacity>
+          <TouchableOpacity onPress={handleUserPhotoSelect}>
             <Text color="green.500" fontWeight="bold" fontSize="md" mb={8}>
               Alterar foto
             </Text>
@@ -71,7 +118,7 @@ export const Profile = () => {
         </Center>
 
         <VStack px={10} mt={12} mb={9}>
-          <Heading color="gray.200" fontSize={"md"} mb={2}>
+          <Heading fontFamily="heading" color="gray.200" fontSize={"md"} mb={2}>
             Alterar Senha
           </Heading>
 

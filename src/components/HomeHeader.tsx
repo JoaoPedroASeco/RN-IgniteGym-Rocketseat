@@ -20,7 +20,9 @@ export const HomeHeader = () => {
         />
         <VStack>
           <Text color="gray.100">Olá,</Text>
-          <Heading color="gray.100">Joao Pedro</Heading>
+          <Heading fontFamily="heading" color="gray.100">
+            Joao Pedro
+          </Heading>
         </VStack>
       </HStack>
 

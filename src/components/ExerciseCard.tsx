@@ -34,7 +34,7 @@ export const ExerciseCard = ({ title, description, ...rest }: Props) => {
         />
 
         <VStack flex={1}>
-          <Heading color="white" fontSize="lg">
+          <Heading color="white" fontFamily="heading" fontSize="lg">
             {title}
           </Heading>
 

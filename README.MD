@@ -14,3 +14,12 @@
 - Edicao e incremento cores no tema do NativeBase 
 - Utilizar a propriedade CSS 'flexShirnk' que faz com que o texto nao empurre os elementos no eixo X do componente
 - Desenvolvi um sistema/contexto para navegacao pelas rotas privadas e publicas.
+- Utilizar a biblioteca para carregar fotos e recortar fotos diretamente do dispositivo do usuario 
+  - Como restringir um valor especifico para o tamanho da foto 
+  - Emitir erros quando o tamanho for maior que o definido 
+- Utilizar HookForm para validar e capturar dados do input 
+  - Capturar todos os valores do input
+  - Setar valores padrao para o input 
+    - No caso do usuario estiver logado, preencher os inputs com os dados vindos do banco
+    - Identificar quando o usuario digita valores errados ou nulos nos inputs
+    - Estilizar os Inputs quando estiverem com erros exibidos
